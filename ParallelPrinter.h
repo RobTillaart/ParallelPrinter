@@ -32,7 +32,7 @@ public:
 
   uint8_t  getLineNumber()         { return _lineNr; };
   uint8_t  getPageNumber()         { return _pageNr; };
-  uint8_t  getPosition()           { return _pageNr; };
+  uint8_t  getPosition()           { return _pos; };
   
   //       n = 2,4,6,8
   void     setTabSize(uint8_t n)   { _tabSize = n; };

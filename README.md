@@ -36,7 +36,9 @@ Have fun!
 
 ### Config
 
+- **setLineLength(n)** idem
 - **getLineLength()** idem
+- **setPageLength()** idem
 - **getPageLength()** idem
 - **getLineNumber()** idem
 - **getPageNumber()** idem
