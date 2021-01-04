@@ -35,7 +35,7 @@ public:
   uint8_t  getPosition()           { return _pageNr; };
   
   //       n = 2,4,6,8
-  void     setTabSize(uint8_t n);
+  void     setTabSize(uint8_t n)   { _tabSize = n; };
   uint8_t  getTabSize()            { return _tabSize; };
   //       n = 1,2,3
   void     setLineFeed(uint8_t n)  { _lineFeed = constrain(n, 1, 3); };

@@ -66,9 +66,9 @@ void ParallelPrinter::reset()
 
 void ParallelPrinter::setTabSize(uint8_t n)
 {
-  // 2,4,6,8 allowed
+  // 0,2,4,6,8 allowed
+  // 0 == ignore tabs.
   _tabSize = (n > 8) ? 8 : n/2 * 2;
-  if (_tabSize < 2) _tabSize = 2;
 }
 
 

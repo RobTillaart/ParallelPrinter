@@ -41,7 +41,7 @@ Have fun!
 - **getLineNumber()** idem
 - **getPageNumber()** idem
 - **getPosition()**   idem
-- **setTabSize(n)** tabs are replaced by spaces. n = 2,4,6,8
+- **setTabSize(n)** tabs are replaced by spaces. n can be 0 or any size!
 - **getTabSize()** returns tabSize set
 - **setLineFeed(n)** n = 1,2,3  1 = default
 - **getLineFeed()** returns lineFeed set

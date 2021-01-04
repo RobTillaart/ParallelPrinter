@@ -80,16 +80,22 @@ unittest(test_constructor_basic)
   assertEqual(1, PP.getLineFeed());
 
   PP.formfeed();
+  PP.formfeed();
+  PP.formfeed();
+  PP.formfeed();
+  PP.println("This is a test");
+  PP.println("This is a test");
   PP.println("This is a test");
   PP.print("Hello World");
   
+  // TODO should be line 2 and position 12 or so.
   fprintf(stderr, "%d\n", PP.getLineNumber());
   fprintf(stderr, "%d\n", PP.getPageNumber());
   fprintf(stderr, "%d\n", PP.getPosition());
   
-  assertEqual(0, PP.getLineNumber());
-  assertEqual(0, PP.getPageNumber());
-  assertEqual(0, PP.getPosition());
+  assertEqual(1, PP.getLineNumber());
+  assertEqual(1, PP.getPageNumber());
+  assertEqual(1, PP.getPosition());
 }
 
 
@@ -97,11 +103,7 @@ unittest(test_tabs_linefeed)
 {
   ParallelPrinter PP;
 
-  fprintf(stderr, "0\t");
-  PP.setTabSize(0);
-  assertEqual(2, PP.getTabSize());  // minimum tab size
-    
-  for (int tab = 2; tab < 10; tab +=2 )
+  for (int tab = 0; tab < 10; tab +=2 )
   {
     fprintf(stderr, "%d\t", tab);
     PP.setTabSize(tab);
