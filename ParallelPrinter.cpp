@@ -1,16 +1,19 @@
 //
 //    FILE: ParallelPrinter.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.0
+// VERSION: 0.2.1
 // PURPOSE: parallel printer class that implements the Print interface
 //    DATE: 2013-09-30
 //     URL: https://github.com/RobTillaart/ParallelPrinter
 //
-// HISTORY
-// 0.1.0    2013-09-30 initial release
-// 0.2.0    2020-05-26 refactor, examples
+//  HISTORY
+//  0.1.0   2013-09-30  initial release
+//  0.2.0   2020-05-26  refactor, examples
+//  0.2.1   2020-01-04  arduino-CI + unit test
+
 
 #include "ParallelPrinter.h"
+
 
 ParallelPrinter::ParallelPrinter()
 {
@@ -36,6 +39,7 @@ ParallelPrinter::ParallelPrinter(uint8_t STROBE, uint8_t BUSY, uint8_t OOP, uint
     pinMode(_pin[i], OUTPUT);
   }
 }
+
 
 void ParallelPrinter::begin(uint8_t lineLength, uint8_t pageLength)
 {
