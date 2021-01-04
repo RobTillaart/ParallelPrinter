@@ -87,15 +87,14 @@ unittest(test_constructor_basic)
   PP.println("This is a test");
   PP.println("This is a test");
   PP.print("Hello World");
+
+  // fprintf(stderr, "%d\n", PP.getLineNumber());
+  // fprintf(stderr, "%d\n", PP.getPageNumber());
+  // fprintf(stderr, "%d\n", PP.getPosition());
   
-  // TODO should be line 2 and position 12 or so.
-  fprintf(stderr, "%d\n", PP.getLineNumber());
-  fprintf(stderr, "%d\n", PP.getPageNumber());
-  fprintf(stderr, "%d\n", PP.getPosition());
-  
-  assertEqual(1, PP.getLineNumber());
-  assertEqual(1, PP.getPageNumber());
-  assertEqual(1, PP.getPosition());
+  assertEqual(3, PP.getLineNumber());  // 0 based
+  assertEqual(4, PP.getPageNumber());  // 0 based
+  assertEqual(11, PP.getPosition());   // 0 based
 }
 
 
