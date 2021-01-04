@@ -80,7 +80,7 @@ unittest(test_constructor_basic)
 
   PP.formfeed();
   PP.println("This is a test");
-  PP.print("Hello World";
+  PP.print("Hello World");
   assertEqual(0, PP.getLineNumber());
   assertEqual(0, PP.getPageNumber());
   assertEqual(0, PP.getPosition());
