@@ -21,10 +21,15 @@ public:
   ParallelPrinter(uint8_t STROBE, uint8_t BUSY, uint8_t OOP, uint8_t * dataPins );
 
   void     begin(uint8_t lineLength = 80, uint8_t pageLength = 60);
+  void     reset();
   size_t   write(uint8_t c);
 
+  void     setLineLength(uint8_t lineLength = 80) { _lineLength = lineLength; };
   uint8_t  getLineLength()         { return _lineLength; };
+
+  void     setPageLength(uint8_t pageLength = 60) { _pageLength = pageLength; };
   uint8_t  getPageLength()         { return _pageLength; };
+
   uint8_t  getLineNumber()         { return _lineNr; };
   uint8_t  getPageNumber()         { return _pageNr; };
   uint8_t  getPosition()           { return _pageNr; };

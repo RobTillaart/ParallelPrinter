@@ -69,14 +69,15 @@ unittest(test_constructor_basic)
   fprintf(stderr, "VERSION: %s\n", PARALLELPRINTER_VERSION);
 
   ParallelPrinter PP;
-
-  assertEqual(0, PP.getLineLength());
-  assertEqual(0, PP.getPageLength());
+  
+  PP.begin();
+  assertEqual(80, PP.getLineLength());
+  assertEqual(60, PP.getPageLength());
   assertEqual(0, PP.getLineNumber());
   assertEqual(0, PP.getPageNumber());
   assertEqual(0, PP.getPosition());
-  assertEqual(0, PP.getTabSize());
-  assertEqual(0, PP.getLineFeed());
+  assertEqual(2, PP.getTabSize());
+  assertEqual(1, PP.getLineFeed());
 
   PP.formfeed();
   PP.println("This is a test");
@@ -89,18 +90,25 @@ unittest(test_constructor_basic)
 
 unittest(test_tabs_linefeed)
 {
-  fprintf(stderr, "VERSION: %s\n", PARALLELPRINTER_VERSION);
-
   ParallelPrinter PP;
 
-  for (int tab = 0; tab < 10; tab +=2 )
+  fprintf(stderr, "0\t");
+  PP.setTabSize(0);
+  assertEqual(2, PP.getTabSize());  // minimum tab size
+    
+  for (int tab = 2; tab < 10; tab +=2 )
   {
     fprintf(stderr, "%d\t", tab);
     PP.setTabSize(tab);
     assertEqual(tab, PP.getTabSize());
   }
 
-  for (int LF = 0; LF < 10; LF +=2 )
+
+  fprintf(stderr, "0\t");
+  PP.setLineFeed(0);
+  assertEqual(1, PP.getLineFeed());  // minimum LF size
+  
+  for (int LF = 0; LF < 4; LF +=2 )
   {
     fprintf(stderr, "%d\t", LF);
     PP.setLineFeed(LF);

@@ -38,22 +38,29 @@ ParallelPrinter::ParallelPrinter(uint8_t STROBE, uint8_t BUSY, uint8_t OOP, uint
     _pin[i] = p[i];
     pinMode(_pin[i], OUTPUT);
   }
+  setLineLength(80);
+  setPageLength(60);
+  reset();
 }
 
 
 void ParallelPrinter::begin(uint8_t lineLength, uint8_t pageLength)
 {
-  _pos = 0;
-  _lineNr = 0;
-  _pageNr = 0;
-  _tabSize = 2;
-  _lineFeed = 1;
-  _strobeDelay = 2000;
-  _printLineNumber = false;
+  setLineLength(lineLength);
+  setPageLength(pageLength);
+  reset();
+}
 
-  // page size parameters.
-  _lineLength = lineLength;
-  _pageLength = pageLength;
+
+void ParallelPrinter::reset()
+{
+  _pos             = 0;
+  _lineNr          = 0;
+  _pageNr          = 0;
+  _tabSize         = 2;
+  _lineFeed        = 1;
+  _strobeDelay     = 2000;
+  _printLineNumber = false;
 }
 
 
