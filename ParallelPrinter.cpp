@@ -64,14 +64,6 @@ void ParallelPrinter::reset()
 }
 
 
-void ParallelPrinter::setTabSize(uint8_t n)
-{
-  // 0,2,4,6,8 allowed
-  // 0 == ignore tabs.
-  _tabSize = (n > 8) ? 8 : n/2 * 2;
-}
-
-
 // write() implements the virtual write of the Print class
 size_t ParallelPrinter::write(uint8_t c)
 {
