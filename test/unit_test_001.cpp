@@ -96,14 +96,14 @@ unittest(test_tabs_linefeed)
   for (int tab = 0; tab < 10; tab +=2 )
   {
     fprintf(stderr, "%d\t", tab);
-    PP.setTabSize(tab):
+    PP.setTabSize(tab);
     assertEqual(tab, PP.getTabSize());
   }
 
   for (int LF = 0; LF < 10; LF +=2 )
   {
     fprintf(stderr, "%d\t", LF);
-    PP.setLineFeed(LF):
+    PP.setLineFeed(LF);
     assertEqual(LF, PP.getLineFeed());
   }
 }
