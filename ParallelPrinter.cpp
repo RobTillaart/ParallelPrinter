@@ -1,7 +1,7 @@
 //
 //    FILE: ParallelPrinter.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.1
+// VERSION: 0.2.2
 // PURPOSE: parallel printer class that implements the Print interface
 //    DATE: 2013-09-30
 //     URL: https://github.com/RobTillaart/ParallelPrinter
@@ -9,8 +9,8 @@
 //  HISTORY
 //  0.1.0   2013-09-30  initial release
 //  0.2.0   2020-05-26  refactor, examples
-//  0.2.1   2020-01-04  arduino-CI + unit test
-
+//  0.2.1   2021-01-04  arduino-CI + unit test
+//  0.2.2   2021-01-14  update readme, add linefeed(), add keywords.txt
 
 #include "ParallelPrinter.h"
 
@@ -67,13 +67,13 @@ void ParallelPrinter::reset()
 // write() implements the virtual write of the Print class
 size_t ParallelPrinter::write(uint8_t c)
 {
-  if (c == '\t')
+  if (c == '\t')  // TAB
   {
     uint8_t spaces = _tabSize - _pos % _tabSize;
     for (uint8_t i = 0; i < spaces; i++) processSingleChar(' ');
     return spaces;
   }
-  if (c == '\n')
+  if (c == '\n')  // LINEFEED
   {
     for (uint8_t i = 0; i < _lineFeed; i++)
     {
