@@ -6,15 +6,19 @@
 //    DATE: 2020-06-24
 //    (c) : MIT
 
+
 // Simple parallel printer simulator, prints to serial...
 // version could be made with a shiftin register ....
 
+
 #include "Arduino.h"
+
 
 uint8_t STROBE = 2;
 uint8_t BUSY   = 13;
 uint8_t OOP    = 10;
 uint8_t dataPins[] = { 3, 4, 5, 6, 7, 8, 9, 10 };
+
 
 void setup()
 {
@@ -36,11 +40,13 @@ void setup()
   delay(5000);              // do startup thingies.
 }
 
+
 void loop()
 {
   handleInput();
   // do other things here
 }
+
 
 void handleInput()
 {
@@ -60,4 +66,6 @@ void handleInput()
   Serial.write(x);
 }
 
+
 // -- END OF FILE --
+
