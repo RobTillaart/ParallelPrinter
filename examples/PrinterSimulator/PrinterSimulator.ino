@@ -22,8 +22,6 @@ void setup()
   Serial.begin(115200);
   Serial.println();
   Serial.println(__FILE__);
-  Serial.println("PARALLELPRINTER_VERSION: ");
-  Serial.println(PARALLELPRINTER_VERSION);
   Serial.println();
 
   pinMode(PIN_STROBE, INPUT);
@@ -69,4 +67,3 @@ void handleInput()
 
 
 //  -- END OF FILE --
-
