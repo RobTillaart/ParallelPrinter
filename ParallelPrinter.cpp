@@ -1,9 +1,9 @@
 //
 //    FILE: ParallelPrinter.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.7
-// PURPOSE: parallel printer class that implements the Print interface
+// VERSION: 0.2.8
 //    DATE: 2013-09-30
+// PURPOSE: parallel printer class that implements the Print interface
 //     URL: https://github.com/RobTillaart/ParallelPrinter
 
 
