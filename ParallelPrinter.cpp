@@ -135,8 +135,8 @@ void ParallelPrinter::sendByte(uint8_t c)
   //  while (digitalRead(_oopPin) == LOW) yield();
   //  indication in hardware?
 
-  //  Serial.write(c);  //  debugging
-  //  return;
+  Serial.write(c);  //  debugging + needed for unit tests
+  return;
 
   //  wait until printer is ready.
   while (digitalRead(_busyPin) == HIGH) yield();
