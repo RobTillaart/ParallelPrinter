@@ -6,7 +6,9 @@
 //    DATE: 2013-09-30
 // PURPOSE: parallel printer class that implements the Print interface
 //     URL: https://github.com/RobTillaart/ParallelPrinter
-
+//
+//  an interesting spin off
+//  https://github.com/RobTillaart/ParallelPrinter/issues/8#issuecomment-4166133259
 
 #include "Arduino.h"
 
@@ -15,10 +17,6 @@
 
 #define FORMFEED                              12
 #define LINEFEED                              10
-
-
-update with remarks here
-https://github.com/RobTillaart/ParallelPrinter/issues/8#issuecomment-4166133259
 
 
 class ParallelPrinter: public Print
