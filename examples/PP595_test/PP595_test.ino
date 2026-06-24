@@ -14,10 +14,10 @@ uint8_t oop = 12;
 //  74HC595 specific pins
 uint8_t data = 8;
 uint8_t latch = 9;
-uint8_t clock = 10;
+uint8_t clk = 10;
 
 
-PP595 PP(strobe, busy, oop, data, latch, clock);
+PP595 PP(strobe, busy, oop, data, latch, clk);
 
 void setup()
 {
